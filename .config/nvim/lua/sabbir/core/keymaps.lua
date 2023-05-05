@@ -54,5 +54,15 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
+-- terminal opening key map is here
+terminal = require("nvim-terminal").DefaultTerminal
+
+local silent = { silent = true }
+
+vim.api.nvim_set_keymap("n", "<leader>t", ":lua terminal:toggle()<cr>", silent)
+vim.api.nvim_set_keymap("n", "<leader>1", ":lua terminal:open(1)<cr>", silent)
+vim.api.nvim_set_keymap("n", "<leader>2", ":lua terminal:open(2)<cr>", silent)
+vim.api.nvim_set_keymap("n", "<leader>3", ":lua terminal:open(3)<cr>", silent)
+
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
