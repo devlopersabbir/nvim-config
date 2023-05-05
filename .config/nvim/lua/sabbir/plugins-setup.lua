@@ -28,6 +28,9 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
+	-- for opening a terminal as a split terminal
+	use("s1n7ax/nvim-terminal")
+
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
 
